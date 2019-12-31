@@ -1,4 +1,7 @@
-ctrl + D = multiline editing
+default  : ctrl + D = multiline editing
+auto pep8: ctrl + Shift + 8
+
+
 
 1. Go to Sublime Text to: Tools -> Build System -> New Build System 
 and put the next lines:
@@ -8,6 +11,7 @@ and put the next lines:
     "file_regex": "^[ ]File \"(...?)\", line ([0-9]*)",
     "selector": "source.python"
 }
+
 
 Then save it with a meaningful name like: python3.sublime-build
 
