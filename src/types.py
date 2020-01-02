@@ -1,11 +1,3 @@
-# VARIABLES -----------------------------------------------------------
-# can be reassign
-# multiple assignment
-x = y = z = 0
-j, k, l = "shark", 2.05, 15
-# global and local(function scope)
-
-
 # NUMBERS -------------------------------------------------------------
 my_int = 89
 my_float = 9.8
@@ -31,7 +23,7 @@ my_bool = 5 > 8
 
 
 # STRINGS --------------------------------------------------------------
-# immutable
+# immutable, iterable
 str = "Hello, World!"
 str = '''
 Hello
@@ -76,8 +68,10 @@ print("Sammy ate {0:.3f} percent of a pizza!".format(75.765367))
 
 
 # COMPOUND DATA TYPES --------------------------------------------
+list(my_tuple)  # from lists or strings because of iteration
+tuple(my_list)  # from lists or strings because of iteration
 
-# LISTS (mutable)
+# LISTS (mutable, iterable)
 my_list = ['shark', 'cuttlefish', 'squid', 'mantis shrimp']
 my_list[2] = 'anemone'
 # slicing
@@ -91,18 +85,18 @@ del my_list[1]
 del my_list[1:4]
 my_list[1][0]  # nested lists
 # methods
-fish.append('flounder')
-fish.insert(3, 'anchovy')
-fish.extend(my_list)
-fish.remove('kissing gourami')  # only remove the first instance
-fish.pop(3)  # return the item
-fish.index('herring')  # find index
-fish.copy()
-fish.reverse()
-fish.count()
-fish.count('goby')
-fish.sort()
-fish.clear()
+my_list.append('flounder')
+my_list.insert(3, 'anchovy')
+my_list.extend(my_list)
+my_list.remove('kissing gourami')  # only remove the first instance
+my_list.pop(3)  # return the item
+my_list.index('herring')  # find index
+my_list.copy()
+my_list.reverse()
+my_list.count()
+my_list.count('goby')
+my_list.sort()
+my_list.clear()
 # list comprehensions
 # List comprehensions allow us to transform one list or other sequence
 # into a new list. They provide a concise syntax for completing this
@@ -115,12 +109,39 @@ number_list = [x * y for x in [20, 40, 60] for y in [2, 4, 6]]
 print(number_list)  # [40, 80, 120, 80, 160, 240, 120, 240, 360]
 
 
-# TUPLES (immutable)
+# TUPLES (immutable, iterable)
+# items cannot be added to or removed, faster than lists
+my_tuple = ('blue coral',)
 my_tuple = ('blue coral', 'staghorn coral', 'pillar coral')
-
-
-# DICTIONARIES (hold related data(key - value))
-my_dictionary = {'name': 'Sammy', 'animal': 'shark', 'color': 'blue'}
+my_tuple[1] = 'staghorn coral'
 # methods
-tuple(my_list)  # from lists or strings because of iteration
-list(my_tuple)  # from lists or strings because of iteration
+my_tuple[1:3]  # slicing
+coral_kelp = (my_tuple + kelp)
+multiplied_coral = my_tuple * 2
+len(my_tuple)
+max(my_tuple)
+min(my_tuple)
+
+
+# DICTIONARIES (mutable, hold related data(key - value))
+# unlike lists or tuples has arbitrary order(unordered)
+my_dictionary = {'name': 'Sammy', 'animal': 'shark', 'color': 'blue'}
+my_dictionary['name']
+my_dictionary['name'] = 'Jamie'
+del my_dictionary['name']
+# methods
+my_dictionary.clear()
+my_dictionary.update({'followers': 481})
+# keys
+sammy.keys()  # dict_keys(['followers', 'username', 'online'])
+for common_key in sammy.keys() & jesse.keys():
+    print(sammy[common_key], jesse[common_key])
+# values
+sammy.values()  # dict_values([True, 'sammy-shark', 987])
+# all items
+sammy.items()  # dict_items([('online', True), ...])
+for key, value in sammy.items():
+    print(key, 'is the key for the value', value)
+
+# SEQUENCE TYPES (immutable)
+range(start, stop, step)
