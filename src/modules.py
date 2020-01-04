@@ -19,3 +19,25 @@ print(sys.path)  # move your module.py file into that directory
 
 # EXPORT (own modules)
 # nothing special
+
+# List module identificators
+print(dir(mymodule))
+
+'''If some code not need to be executed in importing file, get some
+restrictions. If the program is being imported from
+another program, then __name__ would be set to the module's name.
+'''
+def sum1(a, b):
+    c = a+b
+    return c
+if __name__ == '__main__':
+    print "Sum is ", sum1(3, 6)
+
+
+# PACKAGE
+'''
+Python modules is a single file, whereas a Python package is a directory
+that contains Python modules and one additional file: __init__.py.
+The file can also be used to import the module, so we can
+from package import * 
+'''

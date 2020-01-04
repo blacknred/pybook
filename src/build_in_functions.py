@@ -1,14 +1,6 @@
-
-
-# Print
-print('hello world')
-print('''hello
-world''')
-print("Hey there it's a cow")
-print('a')
-
-
-print() which will print an object to the terminal
-int() which will convert a string or number data type to an integer
-data type
-len() which returns the length of an object
+print()  # print an object to the terminal
+int()  # convert a string or number data type to an integer data type
+len()  # length of an object
+repr()  # string representation of an object
+ord()  # convert a character value to ASCII code
+chr()  # converting ASCII code to character

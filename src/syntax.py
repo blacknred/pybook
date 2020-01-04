@@ -4,6 +4,12 @@
 # multiple assignment
 x = y = z = 0
 j, k, l = "shark", 2.05, 15
+# type
+type(e)
+# emptiness
+None
+# memoty location(check identity etc)
+id(x)
 
 
 # CONDITIONS --------------------------------------------
@@ -16,11 +22,14 @@ else:
 
 
 # LOOPS ------------------------------------------------
-while
+while True:
+    pass
 
 for i in range(0, 5):
     print(i)
 
+range(start, stop, step)  # generate a list on-the-fly.
+xrange(start, stop, step)  # the same, but frees the memory after
 continue
 break
 pass
@@ -33,37 +42,32 @@ hammering out details.
 
 
 # FUNCTIONS --------------------------------------------
-# bodies
-# allow default args
-def profile_info(username, followers=2):
+# Pass by reference, except reassignment in the body case
+# TypeError, if dont pass any argument to the function with param
+# allow default params, *variable length params
+def profile_info(username, followers=2, *rest):
     print("Username: " + username)
     print("Followers: " + str(followers))
-
-# *args(pass a variable-length args)
-def multiply(*args):
-    z = 1
-    for num in args:
-        z *= num
-    print(z)
-
+    for var in rest:
+        print(var)
 # **kwargs(pass a keyworded, variable-length args dictionary)
 def print_values(**kwargs):
     for key, val in kwargs.items():
         print("The value of {} is {}".format(key, val))
+# lambda
+def func():
+    return "Cricket"
+game = defaultdict(func)
+game = defaultdict(lambda : "Cricket")
 
-# explicit positional params along with *args and **kwargs
-def example(arg_1, arg_2, *args, **kwargs):
 
-# calls
-# keyword arguments allow dont bother in which order we pass args
-profile_info("sammyshark", 945)  # common
+# common call
+profile_info("sammyshark", 945, 'klk', 89)
+# keyword arguments(any order we pass args) call
 profile_info(followers=820, username="cameron-catfish")  # keyword arguments
-print_values(my_name="Sammy", your_name="Casey")  # **kwards call
-
 # *args and **kwargs calls
 def some_args(arg_1, arg_2, arg_3):
     print("arg_1:", arg_1)
-
 def some_kwargs(kwarg_1, kwarg_2, kwarg_3):
     print("kwarg_1:", kwarg_1)
 
@@ -71,3 +75,37 @@ args = ("Sammy", "Casey", "Alex")
 kwargs = {"kwarg_1": "Val", "kwarg_2": "Harper", "kwarg_3": "Remy"}
 some_args(*args)
 some_kwargs(**kwargs)
+
+
+# EXCEPTIONS -----------------------------------------------
+def divide1():
+    try:
+        num = int(raw_input("Enter the number "))
+        c = 45/num
+        print c
+    except Exception as e:
+        print e, type(e)
+    else:
+        print "result is ", c
+    finally:
+        print "finally program ends"
+
+
+divide1()
+
+# User-defined exceptions
+
+class MyException(Exception):
+    def __init__(self, value):
+        self.value = value
+    def __str__(self):
+        return (self.value)
+
+try:
+    num = raw_input("Enter the number : ")
+    if num == '2':
+        raise MyException("ohh")
+    else:
+        print "number is not 2"
+    except MyException:
+        print "My exception occurred"
