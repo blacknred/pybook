@@ -10,7 +10,6 @@ if platform.platform().startswith('Windows'):
 else:
     logging_file = os.path.join(os.getenv('HOME'), 'test.log')
 
-print("Сохраняем лог в", logging_file)
 logging.basicConfig(
     level=logging.DEBUG,  # (CRITICAL,ERROR,WARNING,INFO,DEBUG)
     format='%(asctime)s : %(levelname)s : %(message)s',

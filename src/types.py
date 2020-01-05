@@ -80,9 +80,6 @@ print("Sammy ate {0:.3f} percent of a pizza!".format(75.765367))
 
 
 # COMPOUND DATA TYPES -----------------------------------------------------------
-list(my_tuple)  # from lists or strings because of iteration
-
-
 
 # TUPLES (immutable(items can`t be added to or removed), iterable, faster than lists)
 my_tuple = ('blue coral',)
@@ -149,7 +146,8 @@ len(my_list)
 max(my_list)
 min(my_list)
 list('uiu', 'po')
-sorted(my_list)  # returns a new list
+list(my_tuple)  # from lists or strings because of iteration
+sorted(my_list)  # returns a new list, args: key=None, reverse=False
 my_list.append(my_list)  # ['shark', 'cuttlefish', 'squid', ['shark' ..]]
 my_list.extend('flounder')  # ['shark', 'cuttlefish', 'squid', 'flounder']
 my_list.insert(3, 'anchovy')
