@@ -62,8 +62,8 @@ d1 = collections.OrderedDict()
 Provides a default value for a nonexistent key with a callable function
 '''
 game = defaultdict(lambda: "Cricket")
-game1 = defaultdict(int) # default int value is 0
-game["A"]= "Football"
+game1 = defaultdict(int)  # default int value is 0
+game["A"] = "Football"
 game["B"] = "Badminton"
 print(game["C"])  # Cricket
 print(game["C"])  # 0
@@ -74,11 +74,11 @@ namedtuple gives you a special feature to create your own data type.
 namedtuple(typename, field_names[, verbose=False][,rename=False])
 immutable like tuple
 '''
-employee = collections.namedtuple('emp','name, age, empid')
-record1 = employee("Hamilton", 28, 12365 )
+employee = collections.namedtuple('emp', 'name, age, empid')
+record1 = employee("Hamilton", 28, 12365)
 print("Record is ", record1)  # emp<name='Hamilton',age=28,empid=12365>
-print( "name of employee is ", record1.name)  # Hamilton
-print( "type is ",type(record1))  # <class `__main__.emp`>
+print("name of employee is ", record1.name)  # Hamilton
+print("type is ", type(record1))  # <class `__main__.emp`>
 #
 list1 = ['BOB', 21, 34567]
 record2 = employee._make(list1)  # create from list

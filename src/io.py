@@ -1,4 +1,5 @@
 # PRINT ------------------------------------------------------
+import pickle
 print('hello world')
 print('''hello
 world''')
@@ -50,7 +51,6 @@ The pickle module is used to store complex data such as list
 and dictionary. There is cPickle - faster c version of pickle
 '''
 
-import pickle
 
 name = ["mohit", "bhaskar", "manish"]
 skill = ["Python", "Python", "Java"]

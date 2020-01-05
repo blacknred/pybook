@@ -1,4 +1,4 @@
-# INTs, FLOATs ---------------------------------------------------------
+# INTs, FLOATs --------------------------------------------------------------
 my_int = 89
 my_float = 9.8
 # methods
@@ -18,13 +18,13 @@ round(17.34989436516001, 4)  # round 17.3499
 sum({-10: 'x', -20: 'y', -30: 'z'})  # -60
 
 
-# BOOLEANS -------------------------------------------------------------
+# BOOLEANS ------------------------------------------------------------------
 my_bool = 5 > 8
 is  # Returns True if two variables point to the same object and False
 is not  # Returns False if two variables point to the same object and True
 
 
-# STRINGS --------------------------------------------------------------
+# STRINGS -------------------------------------------------------------------
 # immutable, iterable, utf-8 by def
 str = "Hello, World!"
 str = '''
@@ -78,10 +78,10 @@ print("Sammy ate {0:f} percent of a {1}!".format(75, "pizza"))
 print("Sammy ate {0:.3f} percent of a pizza!".format(75.765367))
 
 
-# COMPOUND DATA TYPES --------------------------------------------
+
+# COMPOUND DATA TYPES -----------------------------------------------------------
 list(my_tuple)  # from lists or strings because of iteration
-tuple(my_list)  # from lists or strings because of iteration
-dict(my_tuple or my_list)  # tuple or list that contain elements as pairs of two values
+
 
 
 # TUPLES (immutable(items can`t be added to or removed), iterable, faster than lists)
@@ -97,6 +97,37 @@ multiplied_coral = my_tuple * 2
 len(my_tuple)
 max(my_tuple)
 min(my_tuple)
+tuple(my_list)  # from lists or strings because of iteration
+
+
+
+# DICTIONARIES (mutable, related data(key - value), unordered(arbitrary
+# unlike lists & tuples), keys are string, int, float, or tuple that
+# does not contain any list)
+my_dictionary = {'name': 'Sammy', 'animal': 'shark', 'color': 'blue'}
+my_dictionary['name']
+my_dictionary['name'] = 'Jamie'
+del my_dictionary['name']
+# methods
+dict(my_tuple or my_list)  # tuple or list that contain elements as pairs of two values
+len(my_dictionary)
+str(my_dictionary)
+max(my_dictionary)  # by keys
+min(my_dictionary)  # by keys
+my_dictionary.copy()
+my_dictionary.clear()
+my_dictionary.update({'followers': 481})
+# keys
+sammy.keys()  # dict_keys(['followers', 'username', 'online'])
+for common_key in sammy.keys() & jesse.keys():
+    print(sammy[common_key], jesse[common_key])
+# values
+sammy.values()  # dict_values([True, 'sammy-shark', 987])
+# all items
+sammy.items()  # dict_items([('online', True), ...])
+for key, val in sammy.items():
+    print(key, 'is the key for the value', val)
+
 
 
 # LISTS (mutable, iterable)
@@ -131,27 +162,22 @@ my_list.reverse()
 my_list.count()
 my_list.count('goby')
 my_list.clear()
-'''
-sort
-possible args: cmp=None, key=None, reverse=False
-'''
+# sort (possible args: cmp=None, key=None, reverse=False)
 my_list.sort()
 # reverse
 my_list.sort(reverse=True)
 # key
-def fun1(x):
-	return x[1]
 list_tup = [("a", 4), ("b", 1), ("v", 5), ("f", 2)]
-list_tup.sort(key=fun1)  # [("b", 1), ("f", 2), ("a", 4), ("v", 5)]
+list_tup.sort(key=lambda x: x[1])  # [("b", 1), ("f", 2), ("a", 4), ("v", 5)]
 # cmp(complex)
-list1 = [10,9,3,7,2,1,23,1,561,1,1,96,1]
-def cmp1(x,y):
-	if x == 1 or y==1:
-		c = y-x
-	else:
-		c = x-y
-	return c
-list1.sort(cmp = cmp1)  # [2,3,7,9,10,23,96,561,1,1,1,1,1]
+list1 = [10, 9, 3, 7, 2, 1, 23, 1, 561, 1, 1, 96, 1]
+def cmp1(x, y):
+    if x == 1 or y == 1:
+        c = y-x
+    else:
+        c = x-y
+    return c
+list1.sort(cmp=cmp1)  # [2,3,7,9,10,23,96,561,1,1,1,1,1]
 '''
 list comprehensions
 allow us to transform one list or other sequence into a new list.
@@ -163,60 +189,42 @@ number_list = [x for x in range(100) if x % 3 == 0 if x % 5 == 0]
 print(number_list)  # [0, 15, 30, 45, 60, 75, 90]
 number_list = [x * y for x in [20, 40, 60] for y in [2, 4, 6]]
 print(number_list)  # [40, 80, 120, 80, 160, 240, 120, 240, 360]
+'''
+build-in iteration functions
+'''
+
+def square(number):
+    return number*number
 
 
-# DICTIONARIES (mutable, related data(key - value), unordered(arbitrary
-# unlike lists & tuples), keys are string, int, float, or tuple that
-# does not contain any list)
-my_dictionary = {'name': 'Sammy', 'animal': 'shark', 'color': 'blue'}
-my_dictionary['name']
-my_dictionary['name'] = 'Jamie'
-del my_dictionary['name']
-# methods
-dict()  # tuple or list that contain elements as pairs of two values
-len(my_dictionary)
-str(my_dictionary)
-max(my_dictionary)  # by keys
-min(my_dictionary)  # by keys
-my_dictionary.copy()
-my_dictionary.clear()
-my_dictionary.update({'followers': 481})
-# keys
-sammy.keys()  # dict_keys(['followers', 'username', 'online'])
-for common_key in sammy.keys() & jesse.keys():
-    print(sammy[common_key], jesse[common_key])
-# values
-sammy.values()  # dict_values([True, 'sammy-shark', 987])
-# all items
-sammy.items()  # dict_items([('online', True), ...])
-for key, val in sammy.items():
-    print(key, 'is the key for the value', val)
+def even(number):
+    if (number % 2) == 0:
+        return True
+    return False
 
 
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = []
+even_numbers = []
 
+# map
+for number in numbers:
+    squared = square(number)
+    squared_numbers.append(squared)
+squared_numbers = list(map(lambda number: number*number, numbers))
+# filter
+for number in numbers:
+    if even(number):
+        even_numbers.append(number)
+even_numbers = filter(even, numbers)
+# zip (combine values with matching indexes from multiple lists into tuple)
+even_numbers = [2, 4]
+even_numbers_squared = [4, 8]
+combined = []
+even_numbers_index = 0
+for number in even_numbers:
+    squared = even_numbers_squared[even_numbers_index]
+    squared_tuple = (number, squared)
+    combined.append(squared_tuple)
 
-# #Множество
-# #Множества – это неупорядоченные наборы простых объектов.
-# #Используя множества, можно осуществлять проверку принадлежности, определять, является
-# #ли данное множество подмножеством другого множества, находить пересечения множеств и так далее.
-# bri = set(['Бразилия', 'Россия', 'Индия'])
-# 'Индия' in bri #True
-# 'США' in bri #False
-# bric = bri.copy()
-# bric.add('Китай')
-# bric.issuperset(bri) #True
-# bri.remove('Россия')
-# bri & bric #OR bri.intersection(bric)
-# {'Бразилия', 'Индия'}
-# #Ссылки
-# #Простое присваивание'
-# shoplist = ['яблоки', 'манго', 'морковь', 'бананы']
-# mylist = shoplist # mylist - лишь ещё одно имя, указывающее на тот же объект!
-# del shoplist[0]
-# print('shoplist:', shoplist)
-# print('mylist:', mylist)#shoplist и mylist выводят один и тот же список
-# #Копирование при помощи полной вырезки
-# mylist = shoplist[:] # создаём копию путём полной вырезки
-# del mylist[0]
-# print('shoplist:', shoplist)
-# print('mylist:', mylist)# Обратите внимание, что теперь списки разные
+combined = tuple(zip(even_numbers, even_numbers_squared))

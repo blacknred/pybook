@@ -1,7 +1,7 @@
-# LOGGING
+# LOGGING(more convenient than print)
 import os
 import platform
-import logging
+from logging import logging
 
 if platform.platform().startswith('Windows'):
     logging_file = os.path.join(
@@ -12,7 +12,7 @@ else:
 
 print("Сохраняем лог в", logging_file)
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.DEBUG,  # (CRITICAL,ERROR,WARNING,INFO,DEBUG)
     format='%(asctime)s : %(levelname)s : %(message)s',
     filename=logging_file,
     filemode='w',

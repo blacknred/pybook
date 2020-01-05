@@ -27,11 +27,15 @@ print(dir(mymodule))
 restrictions. If the program is being imported from
 another program, then __name__ would be set to the module's name.
 '''
+
+
 def sum1(a, b):
     c = a+b
     return c
+
+
 if __name__ == '__main__':
-    print "Sum is ", sum1(3, 6)
+    print("Sum is ", sum1(3, 6))
 
 
 # PACKAGE
