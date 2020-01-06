@@ -17,7 +17,7 @@ def sendEmail(sender_email, password, to, subject, msg):
         print("Some Error Occured")
 
 
-if __name__ == '__main__':
+def main():
     SENDER_EMAIL = "youremail@xyz.com"
     PASSWORD = "password"
     TO = "yourfrnds@email.com"
@@ -25,3 +25,7 @@ if __name__ == '__main__':
     MESSAGE = "hey dawg! it's my first Email"
 
     sendEmail(SENDER_EMAIL, PASSWORD, TO, SUBJECT, MESSAGE)
+
+
+if __name__ == '__main__':
+    main()

@@ -23,16 +23,16 @@
     * 1/3 of the size of equivalent C++ and Java code
     * 2-10 times slower of equivalent C++ and Java code
     * can be both dynamically and strongly typed
-    * py-pyc(bytecode)
+    * py(interpretor)=>pyc(bytecode on compilation)
     * /usr/local/bin/python
     * Integrated Development Environment (IDLE) - shell
     * pip3 `pip3 install package_name`
     * youtube, instagram
 
-## implementations
+## interpreters
 
     * CPython(prime)
-    * Cython(maximum performance and static typing)
+    * Cython(84 times faster and static typing)
     * Jython (no GIL, Java multythread, JVM)
     * IronPython
     * MicroPython

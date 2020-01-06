@@ -5,14 +5,14 @@ my_float = 9.8
 float(57)
 int(390.8)
 abs()  # absolute value of a number from null
-x // y  # floor division, returns a quotient
-x % y  # modulo division, returns a remainder
+my_int // my_float  # floor division, returns a quotient
+my_int % my_float  # modulo division, returns a remainder
 # finding the quotient and remainder in one function
 # here we'll have 266 pages filled with 300 words and 200 words left
 divmod(80000, 300)  # (266, 200)
 # raise numbers to a certain power
 pow(2, 24)  # 16777216
-x ** y  # exponentiation
+my_int ** my_float  # exponentiation
 round(17.34989436516001, 4)  # round 17.3499
 # count sum for lists, tuples, and dictionaries
 sum({-10: 'x', -20: 'y', -30: 'z'})  # -60
@@ -20,8 +20,8 @@ sum({-10: 'x', -20: 'y', -30: 'z'})  # -60
 
 # BOOLEANS ------------------------------------------------------------------
 my_bool = 5 > 8
-is  # Returns True if two variables point to the same object and False
-is not  # Returns False if two variables point to the same object and True
+my_bool is 5
+my_bool is not 5
 
 
 # STRINGS -------------------------------------------------------------------
@@ -72,7 +72,7 @@ max(str)  # the max char from string according to the ASCII
 str.count('l')  # 3
 str.find('o')  # 4 (first index)
 str.find('o', 5)  # 8 (first after)
-if "be" in str:  # also find
+if "be" in str: None # also find
 print("Sammy the {} has a pet {}!".format("shark", "pilot fish"))
 print("Sammy ate {0:f} percent of a {1}!".format(75, "pizza"))
 print("Sammy ate {0:.3f} percent of a pizza!".format(75.765367))
@@ -89,24 +89,26 @@ my_tuple[1] = 'staghorn coral'
 a, b, c, d = my_tuple  # unpack
 # methods
 my_tuple[1:3]  # slicing
-coral_kelp = (my_tuple + kelp)
+coral_kelp = (my_tuple + my_tuple)
 multiplied_coral = my_tuple * 2
 len(my_tuple)
 max(my_tuple)
 min(my_tuple)
-tuple(my_list)  # from lists or strings because of iteration
+tuple('my_list')  # from lists or strings because of iteration
 
 
 
-# DICTIONARIES (mutable, related data(key - value), unordered(arbitrary
-# unlike lists & tuples), keys are string, int, float, or tuple that
-# does not contain any list)
+# DICTIONARIES (mutable)
+'''
+unordered(unlike lists & tuples) key:value pairs,
+keys are string, int, float, or tuple that does not contain any list)
+'''
 my_dictionary = {'name': 'Sammy', 'animal': 'shark', 'color': 'blue'}
 my_dictionary['name']
 my_dictionary['name'] = 'Jamie'
 del my_dictionary['name']
 # methods
-dict(my_tuple or my_list)  # tuple or list that contain elements as pairs of two values
+dict(() or [])  # tuple or list that contain elements as pairs of two values
 len(my_dictionary)
 str(my_dictionary)
 max(my_dictionary)  # by keys

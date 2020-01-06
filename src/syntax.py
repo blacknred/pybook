@@ -8,9 +8,9 @@ id(x)  # memoty location(check identity etc)
 
 
 # CONDITIONS ------------------------------------------------------
-if grade >= 90:
+if l >= 90:
     print("A grade")
-elif grade >= 80:
+elif l >= 80:
     print("B grade")
 else:
     print("Failing grade")
@@ -23,18 +23,18 @@ while True:
 for i in range(0, 5):
     print(i)
 
-range(start, stop, step)  # generate a list on-the-fly.
-xrange(start, stop, step)  # the same, but frees the memory after
-continue
-break
 '''
+- range(start, stop, step) generate a list on-the-fly.
+- xrange(start, stop, step) the same, but frees the memory after
+- continue
+- break
+- pass
 The pass statement tells the program to disregard that
 condition and continue to run the program as usual.
 The pass statement can create minimal classes, or act as a placeholder
 when working on new code and thinking on an algorithmic level before
 hammering out details.
 '''
-pass
 
 
 # FUNCTIONS --------------------------------------------------------
@@ -105,7 +105,7 @@ some_kwargs(**kwargs)
 # EXCEPTIONS -----------------------------------------------------
 def divide1():
     try:
-        num = int(raw_input("Enter the number "))
+        num = int(input("Enter the number "))
         c = 45/num
         print(c)
     except Exception as e:
@@ -129,7 +129,7 @@ class MyException(Exception):
 
 
 try:
-    num = raw_input("Enter the number : ")
+    num = input("Enter the number : ")
     if num == '2':
         raise MyException("ohh")
     else:

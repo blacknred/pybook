@@ -6,7 +6,7 @@ world''')
 
 # INPUT ------------------------------------------------------
 name = input()
-word = raw_input("Enter the word ")
+word = input("Enter the word ")
 
 # FS ---------------------------------------------------------
 '''
