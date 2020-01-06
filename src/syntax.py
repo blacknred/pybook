@@ -71,6 +71,16 @@ game = defaultdict(func)
 game = defaultdict(lambda: "Cricket")
 
 
+# multuple return
+def multiplication_division(num1, num2):
+    return num1*num2, num1/num2
+
+
+product, division = multiplication_division(15, 3)
+# Product = 45 Quotient = 5.0
+print("Product =", product, "Quotient =", division)
+
+
 # common call
 profile_info("sammyshark", 945, 'klk', 89)
 # keyword arguments(any order we pass args) call

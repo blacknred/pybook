@@ -226,3 +226,9 @@ for number in even_numbers:
     combined.append(squared_tuple)
 
 combined = tuple(zip(even_numbers, even_numbers_squared))
+
+# zip two lists into dict
+students = ["Peter", "Julia", "Alex"]
+marks = [84, 65, 77]
+dictionary = dict(zip(students, marks))
+print(dictionary) # {'Peter': 84, 'Julia': 65, 'Alex': 77}

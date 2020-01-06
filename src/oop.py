@@ -9,15 +9,22 @@ them in class because they have some logical connection with the class.
 '''
 
 
-class Fish:
+class Fish():
 	__amount = 45  # private
 
+	# constructor
     def __init__(self, name):
-        self.name = name
+		self.name = name
 
+	# print instance directly
+    def __str__(self):
+		return f"Fish {self.name} with id {self.id}"
+	
+	# delete
     def __del__(self):
         print('{0} is dead!'.format(self.name))
 
+	# static
 	@staticmethod
 	def check_amt(amt):
 		if amt < 50000:
@@ -66,6 +73,7 @@ class Trout(Fish):
 def main():
 	fish = Fish("Fishy")
     sammy = Shark("Sammy")
+	print(fish)
     fish.swim()  # Fishy is swimming.
     sammy.be_awesome()  # Sammy is being awesome.
 
@@ -73,4 +81,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-<figure class = "code" >

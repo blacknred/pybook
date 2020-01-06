@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""Word frequency graph generator.
+
+This script prints out a graph of frequecy of word occurency in the provided file.
+Need two arguments:
+
+ - the issued word
+ - the filename
+"""
+
 import sys
 import operator
 import argparse

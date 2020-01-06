@@ -1,4 +1,4 @@
 {
     "jira-plugin.workingProject": "",
-    "python.formatting.provider": "autopep8"
+    "python.formatting.provider": "autopep8",
 }
