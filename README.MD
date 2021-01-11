@@ -70,7 +70,7 @@
 
     - dev libs
 
-## 3._ vs 2._
+## 3._vs 2._
 
 - print, exec to func
 - raise Exception to func
